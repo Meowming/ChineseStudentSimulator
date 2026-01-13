@@ -6,11 +6,6 @@ export enum LifeStage {
   GRADUATED = '毕业'
 }
 
-export enum Semester {
-  AUTUMN = '秋季学期',
-  SPRING = '春季学期'
-}
-
 export interface GameStats {
   intelligence: number; // 智力
   charm: number;        // 魅力
@@ -22,8 +17,7 @@ export interface GameStats {
 export interface GameState {
   age: number;
   stage: LifeStage;
-  semester: Semester;
-  turnInSemester: number; // 1 to 5
+  turnInYear: number; // 1 to 5
   stats: GameStats;
   storyHistory: string[];
   currentTurn: TurnData | null;

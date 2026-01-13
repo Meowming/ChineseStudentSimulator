@@ -9,16 +9,17 @@ export enum LifeStage {
 export interface GameStats {
   intelligence: number; // 智力
   charm: number;        // 魅力
-  stamina: number;      // 体力
-  happiness: number;    // 压力/心情
-  money: number;        // 零花钱
+  stamina: number;      // 体质
+  money: number;        // 家境
+  luck: number;         // 气运
 }
 
 export interface GameState {
   age: number;
   stage: LifeStage;
-  turnInYear: number; // 1 to 5
+  turnInYear: number;
   stats: GameStats;
+  actionPoints: number; // 全局行动点
   storyHistory: string[];
   currentTurn: TurnData | null;
 }
@@ -27,6 +28,7 @@ export interface TurnOption {
   id: string;
   text: string;
   slotIndex: number; 
+  cost: number; // 消耗的点数
   effect: Partial<GameStats>;
 }
 
